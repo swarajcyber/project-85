@@ -1,8 +1,8 @@
 canvas=document.getElementById("myCanvas")
 ctx=canvas.getContext("2d")
 car_width=75
-car_heigth=100
-background_image = "parkingLot.jpg";
+car_height=100
+background_img = "parkingLot.jpg";
 greencar_image = "car2.png";
 
 car_x=5
@@ -13,9 +13,9 @@ function add() {
     background_imgtag.onload=uploadBackground
     background_imgtag.src=background_img
 
-    rover_imgtag=new Image()
-    rover_imgtag.onload=uploadgreencar
-    rover_imgtag.src=greencar_image
+    greencar_imgtag=new Image()
+    greencar_imgtag.onload=uploadgreencar
+	greencar_imgtag.src=greencar_image
 
 }
 
@@ -84,8 +84,8 @@ function down()
 
 function left()
 {
-	if(car_x<700){
-        car_x=car_x+10
+	if(car_x>0){
+        car_x=car_x-10
         uploadBackground()
         uploadgreencar()
     }
@@ -93,8 +93,8 @@ function left()
 
 function right()
 {
-	if(car_x>0){
-        car_x=car_x-10
+	if(car_x<700){
+        car_x=car_x+10
         uploadBackground()
         uploadgreencar()
     }
